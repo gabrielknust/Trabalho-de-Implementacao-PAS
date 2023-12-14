@@ -16,6 +16,7 @@ import trabalho.Model.Comprador;
 
 public class CompradorControl {  
     static HashMap<String,Comprador> compradores;
+    static ArrayList<String> caracteristicas;
     static Scanner sc = new Scanner(System.in);
     public static Comprador create(){
         System.out.print("Informe o CPF: ");
@@ -29,7 +30,6 @@ public class CompradorControl {
         System.out.print("Informe o Endereco: ");
         String endereco = sc.nextLine();
         int controlador = 0;
-        ArrayList<String> caracteristicas = null;
         while(controlador !=9){
             System.out.println("Deseja adicionar ou remover caracteristicas do comprador?");
             System.out.println("1 - Adicionar");

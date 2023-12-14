@@ -13,12 +13,12 @@ public class Imovel {
     private String modo;
     private Cliente dono;
     private String endereco;
-    private Tipo tipo;
+    private String tipo;
     private int quartos;
     private float valor;
     private boolean vendido = false;
 
-    public Imovel(int codigo, String modo, Cliente dono, String endereco, Tipo tipo, int quartos, float valor) {
+    public Imovel(int codigo, String modo, Cliente dono, String endereco, String tipo, int quartos, float valor) {
         this.codigo = codigo;
         this.modo = modo;
         this.dono = dono;
@@ -60,11 +60,11 @@ public class Imovel {
         this.endereco = endereco;
     }
 
-    public Tipo getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(Tipo tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 

@@ -22,7 +22,7 @@ public class ImovelControl {
     static int indice=0;
     static Scanner sc = new Scanner(System.in);
     
-    public static Imovel create(String modo, Cliente dono, String endereco, Tipo tipo, int quartos, float valor){
+    public static Imovel create(String modo, Cliente dono, String endereco, String tipo, int quartos, float valor){
         imovel = new Imovel(codigo,modo,dono,endereco,tipo,quartos,valor);
         imoveis.put(codigo,imovel);
         codigo++;

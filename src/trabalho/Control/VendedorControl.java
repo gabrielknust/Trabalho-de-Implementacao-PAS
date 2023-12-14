@@ -5,6 +5,7 @@
 package trabalho.Control;
 
 import java.util.HashMap;
+import java.util.Scanner;
 import trabalho.Model.Vendedor;
 
 /**
@@ -12,8 +13,9 @@ import trabalho.Model.Vendedor;
  * @author gabri
  */
 public class VendedorControl {
-    Static Vendedor vendedor;
+    static Vendedor vendedor;
     static HashMap<Integer,Vendedor> vendedores;
+    static Scanner sc = new Scanner(System.in);
     public static Vendedor read(String CPF){
         return vendedores.get(CPF);
     }
@@ -23,7 +25,8 @@ public class VendedorControl {
     }
 
     public static void update(int codigo){
-            vendedor = vendedor.get(codigo)
+            vendedor = vendedores.get(codigo);
+            int indice = 0;
             System.out.println("Informe o que será alterado:");
             System.out.println("1:CPF.");
             System.out.println("2:Nome.");
@@ -31,36 +34,37 @@ public class VendedorControl {
             System.out.println("4:Telefone.");
             System.out.println("5:Endereco.");
             System.out.println("6:Lista dos imoveis.");
+            indice = sc.nextInt();
             switch(indice){
                 case 1:
                    System.out.print("Informe o CPF: ");
-                   String cpf = scanner.nextLine();
+                   String cpf = sc.nextLine();
                    vendedor.setCPF(cpf);
                    break;
                 case 2:
                     System.out.print("Informe o Nome: ");
-                    String nome = scanner.nextLine();
+                    String nome = sc.nextLine();
                     vendedor.setNome(nome);
-                    break
+                    break;
                 case 3: 
                     System.out.print("Informe o Email: ");
-                    String email = scanner.nextLine();
+                    String email = sc.nextLine();
                     vendedor.setEmail(email);
                     break;
 
                 case 4:
                     System.out.print("Informe o Telefone: ");
-                    String telefone = scanner.nextLine();
+                    int telefone = sc.nextInt();
                     vendedor.setTelefone(telefone);
                     break;
 
                 case 5:
                     System.out.print("Lista dos imoveis: ");
-                    String imoveis = scanner.nextLine();
-            
+                    String imoveis = sc.nextLine();      
+            }
     }
-
-    public void delete(int codigo){
+    public static void delete(int codigo){
+        vendedores.remove(codigo);
     }
 }
 

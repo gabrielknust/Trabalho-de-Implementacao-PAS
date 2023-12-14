@@ -16,12 +16,14 @@ public class Visita {
     private ArrayList<Corretor> corretores;
     private Cliente cliente;
     private Date data;
+    private float custo;
 
-    public Visita(ArrayList<Imovel> imoveis, ArrayList<Corretor> corretores, Cliente cliente, Date data) {
+    public Visita(ArrayList<Imovel> imoveis, ArrayList<Corretor> corretores, Cliente cliente, Date data, float custo) {
         this.imoveis = imoveis;
         this.corretores = corretores;
         this.cliente = cliente;
         this.data = data;
+        this.custo = custo;
     }
 
     public ArrayList<Imovel> getImoveis() {
@@ -54,6 +56,14 @@ public class Visita {
 
     public void setData(Date data) {
         this.data = data;
+    }
+
+    public float getCusto() {
+        return custo;
+    }
+
+    public void setCusto(float custo) {
+        this.custo = custo;
     }
     
 }

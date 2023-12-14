@@ -22,7 +22,7 @@ public class ImovelControl {
     static int indice=0;
     static Scanner sc = new Scanner(System.in);
     
-    public static Imovel create(String modo, Cliente dono, String endereco, Tipo tipo, int quartos, float valor){
+    public static Imovel create(String modo, Cliente dono, String endereco, String tipo, int quartos, float valor){
         imovel = new Imovel(codigo,modo,dono,endereco,tipo,quartos,valor);
         imoveis.put(codigo,imovel);
         codigo++;
@@ -36,6 +36,9 @@ public class ImovelControl {
     }
     public static void update(int codigo){
         String modo = null;
+        String tipo = null;
+        String endereco = null;
+        String CPF = null;
         imovel = imoveis.get(codigo);
         System.out.println("Informe o que será alterado:");
         System.out.println("1:Modo.");
@@ -62,15 +65,14 @@ public class ImovelControl {
                 imovel.setModo(modo);
                 break;
             case 2:
-                System.out.println("Informe o código do novo dono:");
-                int condigo = sc.nextInt();
-                Cliente dono = VendedorControl.read(condigo);
+                System.out.println("Informe o CPF do novo dono:");
+                CPF = sc.nextLine();
+                Cliente dono = VendedorControl.read(CPF);
                 imovel.setDono(dono);
                 break;
             case 3:
                 System.out.println("Informe o novo endereço:");
-                String enderecoNovo = sc.nextLine();
-                endereco = enderecoNovo;
+                endereco = sc.nextLine();
                 imovel.setEndereco(endereco);
                 break;
 
@@ -99,19 +101,17 @@ public class ImovelControl {
             case 5: 
                 System.out.println("Informe o numero de quartos:");
                 int numQuartos = sc.nextInt();
-                quartos = numQuartos;
-                imovel.setQuartos(quartos);
+                imovel.setQuartos(numQuartos);
                 break;
 
             case 6: 
                 System.out.println("Informe o valor do imovel:");
-                int numQuartos = sc.nextFloat();
-                valor = novoValor;
+                float valor = sc.nextFloat();
                 imovel.setValor(valor);
                 break;
             }
     }
-    public void delete(int codigo){
+    public static void delete(int codigo){
         imoveis.remove(codigo);
     }
 }

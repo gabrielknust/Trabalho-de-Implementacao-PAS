@@ -15,6 +15,7 @@ import trabalho.Model.Corretor;
 public class CorretorControl {
     private static HashMap<Integer,Corretor> corretores;
     private static Scanner sc = new Scanner(System.in);
+    
     public static Corretor create(){
         int matricula;
         int comissaoVenda;
@@ -46,7 +47,7 @@ public class CorretorControl {
         return corretores;
     }
     
-    public static void Update(int matricula){
+    public static void update(int matricula){
         Corretor corretor = corretores.get(matricula);
         int indice = 0;
         System.out.println("Informe o que será alterado:");

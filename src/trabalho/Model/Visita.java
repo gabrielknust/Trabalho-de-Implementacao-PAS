@@ -4,21 +4,21 @@
  */
 package trabalho.Model;
 
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  *
  * @author gabri
  */
 public class Visita {
-    private ArrayList<Imovel> imoveis;
-    private ArrayList<Corretor> corretores;
+    private HashMap<Integer,Imovel> imoveis;
+    private HashMap<Integer,Corretor> corretores;
     private Cliente cliente;
     private Date data;
     private float custo;
 
-    public Visita(ArrayList<Imovel> imoveis, ArrayList<Corretor> corretores, Cliente cliente, Date data, float custo) {
+    public Visita(HashMap<Integer,Imovel> imoveis, HashMap<Integer,Corretor> corretores, Cliente cliente, Date data, float custo) {
         this.imoveis = imoveis;
         this.corretores = corretores;
         this.cliente = cliente;
@@ -26,19 +26,19 @@ public class Visita {
         this.custo = custo;
     }
 
-    public ArrayList<Imovel> getImoveis() {
+    public HashMap<Integer, Imovel> getImoveis() {
         return imoveis;
     }
 
-    public void setImoveis(ArrayList<Imovel> imoveis) {
+    public void setImoveis(HashMap<Integer, Imovel> imoveis) {
         this.imoveis = imoveis;
     }
 
-    public ArrayList<Corretor> getCorretores() {
+    public HashMap<Integer, Corretor> getCorretores() {
         return corretores;
     }
 
-    public void setCorretores(ArrayList<Corretor> corretores) {
+    public void setCorretores(HashMap<Integer, Corretor> corretores) {
         this.corretores = corretores;
     }
 

@@ -6,7 +6,6 @@ package trabalho.Control;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -27,17 +26,17 @@ public class VisitaControl {
     private static float custoFixo = 0;
     private static Date data;
     
-    public static Visita Create() throws ParseException{
+    public static Visita create() throws ParseException{
         float custo;
         int controlador=0;
-        ArrayList<Imovel> imoveis = null;
-        ArrayList<Corretor> corretores = null;
+        HashMap<Integer,Imovel> imoveis = null;
+        HashMap<Integer,Corretor> corretores = null;
         Cliente cliente;
         int codigo;
         System.out.println("Informe o codigo dos imoveis a serem visitados:");
         while(controlador !=9){
             codigo = sc.nextInt();
-            imoveis.add(ImovelControl.read(codigo));
+            imoveis.put(codigo,ImovelControl.read(codigo));
             System.out.println("Deseja adicionar mais imoveis a visita?:");
             System.out.println("1 - Sim");
             System.out.println("9 - Não");
@@ -47,7 +46,7 @@ public class VisitaControl {
         System.out.println("Informe o codigo dos corretores resposáveis:");
         while(controlador !=9){
             codigo = sc.nextInt();
-            corretores.add(CorretorControl.read(codigo));
+            corretores.put(codigo,CorretorControl.read(codigo));
             System.out.println("Deseja adicionar mais corretores a visita?:");
             System.out.println("1 - Sim");
             System.out.println("9 - Não");
@@ -74,7 +73,7 @@ public class VisitaControl {
         return visitas;
     }
     
-    public static void Update(int codigo) throws ParseException{
+    public static void update(int codigo) throws ParseException{
         int controlador=0;
         Visita visita = VisitaControl.read(codigo);
         System.out.println("Informe o que será alterado:");
@@ -85,12 +84,12 @@ public class VisitaControl {
         int i =sc.nextInt();
         switch(i){
             case 1:
-                ArrayList<Imovel> imoveis = null;
+                HashMap<Integer,Imovel> imoveis  = null;
                 int cod = 0;
                 System.out.println("Informe o codigo dos imoveis a serem visitados:");
                 while(controlador !=9){
                     cod = sc.nextInt();
-                    imoveis.add(ImovelControl.read(cod));
+                    imoveis.put(cod,ImovelControl.read(cod));
                     System.out.println("Deseja adicionar mais imoveis a visita?:");
                     System.out.println("1 - Sim");
                     System.out.println("9 - Não");
@@ -100,11 +99,11 @@ public class VisitaControl {
                 visita.setCusto(imoveis.size()*custoFixo);
                 break;
             case 2:
-                ArrayList<Corretor> corretores = null;
+                HashMap<Integer,Corretor>  corretores = null;
                 System.out.println("Informe o codigo dos corretores resposáveis:");
                 while(controlador !=9){
                     cod = sc.nextInt();
-                    corretores.add(CorretorControl.read(cod));
+                    corretores.put(cod,CorretorControl.read(cod));
                     System.out.println("Deseja adicionar mais corretores a visita?:");
                     System.out.println("1 - Sim");
                     System.out.println("9 - Não");

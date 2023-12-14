@@ -16,7 +16,7 @@ import trabalho.Model.Vendedor;
 public class VendedorControl {
     static HashMap<String,Vendedor> vendedores;
     static Scanner sc = new Scanner(System.in);
-    public static Vendedor Create(){
+    public static Vendedor create(){
         System.out.print("Informe o CPF: ");
         String cpf = sc.nextLine();
         System.out.print("Informe o Nome: ");

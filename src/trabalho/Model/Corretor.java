@@ -13,7 +13,7 @@ public class Corretor extends Pessoa {
     private int comissaoVenda;
     private int comissaoAluguel;
 
-    public Corretor(int matricula, int comissaoVenda, int comissaoAluguel, String Nome, String Endereço, int Telefone) {
+    public Corretor(int matricula, int comissaoVenda, int comissaoAluguel, String Nome, String Endereço, String Telefone) {
         super(Nome, Endereço, Telefone);
         this.matricula = matricula;
         this.comissaoVenda = comissaoVenda;

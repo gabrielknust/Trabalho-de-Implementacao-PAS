@@ -11,9 +11,9 @@ package trabalho.Model;
 public abstract class Pessoa {
     private String nome;
     private String endereço;
-    private int telefone;
+    private String telefone;
 
-    public Pessoa(String nome, String endereço, int telefone) {
+    public Pessoa(String nome, String endereço, String telefone) {
         this.nome = nome;
         this.endereço = endereço;
         this.telefone = telefone;
@@ -35,11 +35,11 @@ public abstract class Pessoa {
         this.endereço = endereço;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
     

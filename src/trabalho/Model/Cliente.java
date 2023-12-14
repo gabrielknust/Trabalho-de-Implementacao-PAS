@@ -12,7 +12,7 @@ public abstract class Cliente extends Pessoa{
     private String CPF;
     private String email;
 
-    public Cliente(String CPF, String email, String nome, String endereço, int telefone) {
+    public Cliente(String CPF, String email, String nome, String endereço, String telefone) {
         super(nome, endereço, telefone);
         this.CPF = CPF;
         this.email = email;

@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class Vendedor extends Cliente{
     private HashMap<Integer,Imovel> imoveis;
 
-    public Vendedor(HashMap<Integer,Imovel> imoveis, String CPF, String email, String nome, String endereço, int telefone) {
+    public Vendedor(HashMap<Integer,Imovel> imoveis, String CPF, String email, String nome, String endereço, String telefone) {
         super(CPF, email, nome, endereço, telefone);
         this.imoveis = imoveis;
     }

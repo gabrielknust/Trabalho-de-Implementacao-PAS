@@ -24,7 +24,7 @@ public class VendedorControl {
         System.out.print("Informe o Email: ");
         String email = sc.nextLine();
         System.out.print("Informe o Telefone: ");
-        int telefone = sc.nextInt();
+        String telefone = sc.nextLine();
         System.out.print("Informe o Endereco: ");
         String endereco = sc.nextLine();
         int controlador = 0;
@@ -82,7 +82,7 @@ public class VendedorControl {
             break;
         case 4:
             System.out.print("Informe o Telefone: ");
-            int telefone = sc.nextInt();
+            String telefone = sc.nextLine();
             vendedor.setTelefone(telefone);
             break;
         case 5:

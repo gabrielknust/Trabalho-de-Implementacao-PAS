@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Comprador extends Cliente{
     private ArrayList<String> caracteristicas;
 
-    public Comprador(ArrayList<String> caracteristicas, String CPF, String email, String nome, String endereço, int telefone) {
+    public Comprador(ArrayList<String> caracteristicas, String CPF, String email, String nome, String endereço, String telefone) {
         super(CPF, email, nome, endereço, telefone);
         this.caracteristicas = caracteristicas;
     }

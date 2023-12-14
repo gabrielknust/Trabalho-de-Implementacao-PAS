@@ -22,7 +22,6 @@ public class CorretorControl {
         int comissaoAluguel;
         String Nome;
         String Endereco;
-        int telefone;
         System.out.println("Informe a matrícula do Corretor:");
         matricula = sc.nextInt();
         System.out.println("Informe a comissao de venda do Corretor:");
@@ -34,7 +33,7 @@ public class CorretorControl {
         System.out.println("Informe o endereco do Corretor:");
         Endereco = sc.nextLine();
         System.out.println("Informe o telefone do Corretor:");
-        telefone = sc.nextInt();
+        String telefone = sc.nextLine();
         Corretor corretor = new Corretor(matricula, comissaoVenda, comissaoAluguel, Nome, Endereco, telefone);
         corretores.put(matricula, corretor);
         return corretor;
@@ -83,7 +82,7 @@ public class CorretorControl {
                 break;
             case 5:
                 System.out.print("Informe o Telefone: ");
-                int telefone = sc.nextInt();
+                String telefone = sc.nextLine();
                 corretor.setTelefone(telefone);
                 break;
             case 6:

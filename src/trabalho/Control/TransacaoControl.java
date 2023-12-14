@@ -68,8 +68,8 @@ public class TransacaoControl {
             break;
         case 3: 
             System.out.print("Informe o codigo do Imovel: ");
-            int codigoImovel = sc.nextLine();
-            transacao.setImovel(imovel);
+            int codigoImovel = sc.nextInt();
+            transacao.setImovel(codigoImovel);
             break;
         case 4:
             System.out.print("Informe o Telefone: ");

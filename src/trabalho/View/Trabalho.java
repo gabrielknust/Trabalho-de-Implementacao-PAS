@@ -26,6 +26,9 @@ public class Trabalho {
      */
     public static void main(String[] args) {
         int opcao = 0;
+        String CPF;
+        int matricula;
+        int codigo;
         while(opcao!=25){
             System.out.println("Escolha uma opção:");
             System.out.println("1 - Cadastrar Cliente Comprador");
@@ -77,7 +80,7 @@ public class Trabalho {
                 case 6:
                     HashMap<Integer,Visita> visitas = VisitaControl.readAll();
                     visitas.forEach((key,value)->{
-                        System.out.println("Visita no dia " +value.getData());
+                        System.out.println("Visita no dia " +value.getData() + ", codigo :" +value.getCodigo());
                         System.out.println("Imoveis: ");
                         value.getImoveis().forEach((keyImovel,imovel)->{
                             System.out.println("Chave: " + keyImovel);
@@ -118,7 +121,7 @@ public class Trabalho {
                         System.out.println("E-mail " + value.getEmail());
                         System.out.println("Imoveis: ");
                         HashMap<Integer,Imovel> imoveis = value.getImoveis();
-                        imoveis.forEach((codigo,imovel)->{
+                        imoveis.forEach((codigoImovel,imovel)->{
                             System.out.println("Codigo do imovel: " + imovel.getCodigo());
                         });
                     });
@@ -150,10 +153,48 @@ public class Trabalho {
                     break;
                 case 15:
                     System.out.println("Informe o CPF do Cliente Comprador: ");
-                    String CPF = sc.nextLine();
+                    CPF = sc.nextLine();
                     CompradorControl.update(CPF);
                 case 16:
-                    
+                    System.out.println("Informe o CPF do Cliente Vendedor: ");
+                    CPF = sc.nextLine();
+                    VendedorControl.update(CPF);
+                case 17:
+                    System.out.println("Informe a matricula do Corretor: ");
+                    matricula = sc.nextInt();
+                    CorretorControl.update(matricula);
+                case 18:
+                    System.out.println("Informe o codigo do Imovel: ");
+                    codigo = sc.nextInt();
+                    ImovelControl.update(codigo);
+                case 19:
+                    System.out.println("Informe o codigo da visita: ");
+                    codigo = sc.nextInt();
+                    try{
+                        VisitaControl.update(codigo);
+                    }catch (ParseException e){
+                        System.out.println(e.getMessage());
+                    }
+                case 20:
+                    System.out.println("Informe o CPF do Cliente Comprador: ");
+                    CPF = sc.nextLine();
+                    CompradorControl.delete(CPF);
+                case 21:
+                    System.out.println("Informe o CPF do Cliente Vendedor: ");
+                    CPF = sc.nextLine();
+                    VendedorControl.delete(CPF);
+                case 22:
+                    System.out.println("Informe a matricula do Corretor: ");
+                    matricula = sc.nextInt();
+                    CorretorControl.delete(matricula);
+                case 23:
+                    System.out.println("Informe o codigo do Imovel: ");
+                    codigo = sc.nextInt();
+                    ImovelControl.delete(codigo);
+                case 24:
+                    System.out.println("Informe o codigo da visita: ");
+                    codigo = sc.nextInt();
+                        VisitaControl.delete(codigo);
                 case 25:
                     sc.close();
                     System.exit(0);

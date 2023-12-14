@@ -12,18 +12,28 @@ import java.util.HashMap;
  * @author gabri
  */
 public class Visita {
+    private int codigo;
     private HashMap<Integer,Imovel> imoveis;
     private HashMap<Integer,Corretor> corretores;
     private Cliente cliente;
     private Date data;
     private float custo;
 
-    public Visita(HashMap<Integer,Imovel> imoveis, HashMap<Integer,Corretor> corretores, Cliente cliente, Date data, float custo) {
+    public Visita(int codigo,HashMap<Integer,Imovel> imoveis, HashMap<Integer,Corretor> corretores, Cliente cliente, Date data, float custo) {
+        this.codigo = codigo;
         this.imoveis = imoveis;
         this.corretores = corretores;
         this.cliente = cliente;
         this.data = data;
         this.custo = custo;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public HashMap<Integer, Imovel> getImoveis() {

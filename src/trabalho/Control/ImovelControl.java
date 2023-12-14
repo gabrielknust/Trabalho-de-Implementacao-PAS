@@ -16,7 +16,7 @@ import trabalho.Model.Tipo;
  * @author gabri
  */
 public class ImovelControl {
-    static HashMap<Integer,Imovel> imoveis;
+    static HashMap<Integer,Imovel> imoveis = new HashMap<Integer,Imovel>();
     static Imovel imovel;
     static int codigo=1;
     static int indice=0;

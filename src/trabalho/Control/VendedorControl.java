@@ -14,7 +14,7 @@ import trabalho.Model.Vendedor;
  * @author gabri
  */
 public class VendedorControl {
-    static HashMap<String,Vendedor> vendedores;
+    static HashMap<String,Vendedor> vendedores = new HashMap<String,Vendedor>();
     static Scanner sc = new Scanner(System.in);
     public static Vendedor create(){
         System.out.print("Informe o CPF: ");
@@ -111,11 +111,13 @@ public class VendedorControl {
     }
     private static void adicionarImovel(HashMap<Integer,Imovel> imoveis){
         System.out.println("informe o codigo do imovel");
+        sc.nextLine();
         int codigo = sc.nextInt();
         imoveis.put(codigo, ImovelControl.read(codigo));
     }
     private static void removerImovel(HashMap<Integer,Imovel> imoveis){
         System.out.println("informe o codigo do imovel");
+        sc.nextLine();
         int codigo = sc.nextInt();
         imoveis.remove(codigo);
     }

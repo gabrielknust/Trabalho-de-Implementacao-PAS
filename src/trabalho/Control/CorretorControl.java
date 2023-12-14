@@ -13,7 +13,7 @@ import trabalho.Model.Corretor;
  * @author gabri
  */
 public class CorretorControl {
-    private static HashMap<Integer,Corretor> corretores;
+    private static HashMap<Integer,Corretor> corretores = new HashMap<Integer,Corretor>();
     private static Scanner sc = new Scanner(System.in);
     
     public static Corretor create(){

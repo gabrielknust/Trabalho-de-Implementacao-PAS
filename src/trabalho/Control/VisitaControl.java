@@ -20,7 +20,7 @@ import trabalho.Model.Visita;
  * @author gabri
  */
 public class VisitaControl {
-    private static HashMap<Integer,Visita> visitas;
+    private static HashMap<Integer,Visita> visitas = new HashMap<Integer,Visita>();
     private static final Scanner sc = new Scanner(System.in);
     private static int indice = 1;
     private static float custoFixo = 0;
@@ -60,7 +60,7 @@ public class VisitaControl {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         data = sdf.parse(dataStr);
         custo = imoveis.size()*custoFixo;
-        Visita visita = new Visita(imoveis, corretores, cliente, data , custo);
+        Visita visita = new Visita(indice,imoveis, corretores, cliente, data , custo);
         visitas.put(indice, visita);
         indice++;
         return visita;

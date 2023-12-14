@@ -111,12 +111,14 @@ public class CompradorControl {
         compradores.remove(CPF);
     }
     private static void adicionarCaracteristica(ArrayList<String> caracteristicas){
-        System.out.println("informe a caracteristica");
+        System.out.println("Informe a caracteristica:");
+        sc.nextLine();
         String caracteristica = sc.nextLine();
         caracteristicas.add(caracteristica);
     }
     private static void removerCaracteristica(ArrayList<String> caracteristicas){
-        System.out.println("informe a caracteristica");
+        System.out.println("Informe a caracteristica");
+        sc.nextLine();
         String caracteristica = sc.nextLine();
         caracteristicas.remove(caracteristica);
     }

@@ -28,7 +28,7 @@ public class VendedorControl {
         System.out.print("Informe o Endereco: ");
         String endereco = sc.nextLine();
         int controlador = 0;
-        HashMap<Integer,Imovel> imoveis = null;
+        HashMap<Integer,Imovel> imoveis = new HashMap();
         while(controlador !=9){
             System.out.println("Deseja adicionar ou remover imoveis do vendedor?");
             System.out.println("1 - Adicionar");
@@ -112,7 +112,11 @@ public class VendedorControl {
     private static void adicionarImovel(HashMap<Integer,Imovel> imoveis){
         System.out.println("informe o codigo do imovel");
         int codigo = sc.nextInt();
-        imoveis.put(codigo, ImovelControl.read(codigo));
+        if(ImovelControl.read(codigo) == null){
+            imoveis.put(codigo,ImovelControl.create()); 
+        }
+        else imoveis.put(codigo, ImovelControl.read(codigo));
+       
     }
     private static void removerImovel(HashMap<Integer,Imovel> imoveis){
         System.out.println("informe o codigo do imovel");

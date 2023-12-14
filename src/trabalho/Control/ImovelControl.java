@@ -28,11 +28,14 @@ public class ImovelControl {
         System.out.println("1:Venda.");
         System.out.println("2:Aluguel.");
         int i=sc.nextInt();
+        sc.nextLine();
         switch(i){
             case 1:
                 modo = Modo.Venda.getDescricao();
+                break;
             case 2:
                 modo = Modo.Aluguel.getDescricao();
+                break;
             default:
                 System.out.println("Código invalido!");
         }

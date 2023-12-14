@@ -12,11 +12,11 @@ import trabalho.Model.Vendedor;
  * @author gabri
  */
 public class VendedorControl {
-    static HashMap<Integer,Cliente> vendedores;
+    static HashMap<Integer,Vendedor> vendedores;
     public static Vendedor read(int CPF){
         return vendedores.get(CPF);
     }
-    public static HashMap<Integer,Cliente> readAll(){
+    public static HashMap<Integer,Vendedor> readAll(){
         return vendedores;
     }
 }

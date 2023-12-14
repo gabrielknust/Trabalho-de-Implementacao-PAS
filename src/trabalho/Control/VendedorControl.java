@@ -5,18 +5,18 @@
 package trabalho.Control;
 
 import java.util.HashMap;
-import trabalho.Model.Cliente;
+import trabalho.Model.Vendedor;
 
 /**
  *
  * @author gabri
  */
-public class ClienteControl {
-    static HashMap<Integer,Cliente> clientes;
-    public static Cliente read(int CPF){
-        return clientes.get(CPF);
+public class VendedorControl {
+    static HashMap<Integer,Cliente> vendedores;
+    public static Vendedor read(int CPF){
+        return vendedores.get(CPF);
     }
     public static HashMap<Integer,Cliente> readAll(){
-        return clientes;
+        return vendedores;
     }
 }

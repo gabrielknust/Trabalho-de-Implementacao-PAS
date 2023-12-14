@@ -63,7 +63,7 @@ public class ImovelControl {
             case 2:
                 System.out.println("Informe o código do novo dono:");
                 int condigo = sc.nextInt();
-                Cliente dono = ClienteControl.read(condigo);
+                Cliente dono = VendedorControl.read(condigo);
                 imovel.setDono(dono);
             }
     }

@@ -9,5 +9,12 @@ package trabalho.Model;
  * @author gabri
  */
 public enum Tipo {
-    Casa,Apartamento,Loja;
+    Casa("Casa"),Apartamento("Apartamento"),Loja("Loja");
+    private String descricao;
+    Tipo(String descricao){
+        this.descricao=descricao;
+    }
+    public String getDescricao(){
+        return descricao;
+    }
 }

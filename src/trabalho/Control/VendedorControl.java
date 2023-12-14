@@ -6,6 +6,7 @@ package trabalho.Control;
 
 import java.util.HashMap;
 import java.util.Scanner;
+import trabalho.Model.Cliente;
 import trabalho.Model.Imovel;
 import trabalho.Model.Vendedor;
 
@@ -27,6 +28,7 @@ public class VendedorControl {
         String telefone = sc.nextLine();
         System.out.print("Informe o Endereco: ");
         String endereco = sc.nextLine();
+        Vendedor vendedor = new Vendedor(cpf, email, nome, endereco, telefone);
         int controlador = 0;
         HashMap<Integer,Imovel> imoveis = new HashMap();
         while(controlador !=9){
@@ -41,7 +43,7 @@ public class VendedorControl {
                 removerImovel(imoveis);
             }
         }
-        Vendedor vendedor = new Vendedor(imoveis, cpf, email, nome, endereco, telefone);
+        vendedor.setImoveis(imoveis);
         vendedores.put(cpf, vendedor);
         return vendedor;
     }

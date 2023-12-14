@@ -8,7 +8,7 @@ package trabalho.Model;
  *
  * @author gabri
  */
-public abstract class Cliente extends Pessoa{
+public class Cliente extends Pessoa{
     private String CPF;
     private String email;
 

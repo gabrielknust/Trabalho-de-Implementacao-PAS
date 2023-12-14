@@ -11,11 +11,10 @@ import java.util.HashMap;
  * @author gabri
  */
 public class Vendedor extends Cliente{
-    private HashMap<Integer,Imovel> imoveis;
+    private HashMap<Integer,Imovel> imoveis = new HashMap();
 
-    public Vendedor(HashMap<Integer,Imovel> imoveis, String CPF, String email, String nome, String endereço, String telefone) {
+    public Vendedor(String CPF, String email, String nome, String endereço, String telefone) {
         super(CPF, email, nome, endereço, telefone);
-        this.imoveis = imoveis;
     }
 
     public HashMap<Integer,Imovel> getImoveis() {

@@ -49,6 +49,12 @@ public class TransacaoControl {
         Transacao transacao = new Transacao(codigoImovel, imovel, valor, corretores);
         return transacao;
     }
+    public static Transacao read(int codigo){
+        return transacoes.get(codigo);
+    }
+    public static HashMap<Integer,Transacao> readAll(){
+        return transacoes;
+    }
     public static void update(int codigo){
         Transacao transacao = transacoes.get(codigo);
         int indice = 0;
@@ -78,26 +84,17 @@ public class TransacaoControl {
             transacao.setImovel(ImovelControl.read(codigoImovel));
             break;
         case 4:
-            System.out.print("Informe o Telefone: ");
-            String telefone = sc.nextLine();
-            comprador.setTelefone(telefone);
-            break;
-        case 5:
-            System.out.print("Informe o Endereco: ");
-            String endereco = sc.nextLine();
-            comprador.setEndereço(endereco);
-        case 6:
             int controlador = 0;
-            while(controlador !=9){
-                System.out.println("Deseja adicionar ou remover imoveis do vendedor?");
+                while(controlador !=9){
+                    System.out.println("Deseja adicionar ou remover corretores da transacao?");
                 System.out.println("1 - Adicionar");
                 System.out.println("2 - Remover");
                 System.out.println("9 - Sair");
                 controlador = sc.nextInt();
                 if(controlador==1){
-                    adicionarCaracteristica(comprador.getCaracteristicas());
+                    adicionarCorretor(corretores);
                 }else if(controlador==2){
-                    removerCaracteristica(comprador.getCaracteristicas());
+                    removerCorretor(corretores);
                 }
             }
             break;

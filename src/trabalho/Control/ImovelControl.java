@@ -21,6 +21,7 @@ public class ImovelControl {
     static int codigo=1;
     static int indice=0;
     static Scanner sc = new Scanner(System.in);
+    
     public static Imovel create(){
         String modo = null;
         String tipo = null;

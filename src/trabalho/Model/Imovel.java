@@ -10,14 +10,15 @@ package trabalho.Model;
  */
 public class Imovel {
     private int codigo;
-    private Modo modo;
+    private String modo;
     private Cliente dono;
     private String endereco;
     private Tipo tipo;
     private int quartos;
-    private int valor;
+    private float valor;
+    private boolean vendido = false;
 
-    public Imovel(int codigo, Modo modo, Cliente dono, String endereco, Tipo tipo, int quartos, int valor) {
+    public Imovel(int codigo, String modo, Cliente dono, String endereco, Tipo tipo, int quartos, float valor) {
         this.codigo = codigo;
         this.modo = modo;
         this.dono = dono;
@@ -35,11 +36,11 @@ public class Imovel {
         this.codigo = codigo;
     }
 
-    public Modo getModo() {
+    public String getModo() {
         return modo;
     }
 
-    public void setModo(Modo modo) {
+    public void setModo(String modo) {
         this.modo = modo;
     }
 
@@ -75,12 +76,19 @@ public class Imovel {
         this.quartos = quartos;
     }
 
-    public int getValor() {
+    public float getValor() {
         return valor;
     }
 
-    public void setValor(int valor) {
+    public void setValor(float valor) {
         this.valor = valor;
     }
-    
+
+    public boolean isVendido() {
+        return vendido;
+    }
+
+    public void setVendido(boolean vendido) {
+        this.vendido = vendido;
+    }
 }

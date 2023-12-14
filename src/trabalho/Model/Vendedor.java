@@ -24,4 +24,7 @@ public class Vendedor extends Cliente{
         this.caracteristicas = caracteristicas;
     }
     
+    public void addCaracteristicas(String caracteristica){
+        this.caracteristicas.add(caracteristica);
+    }
 }

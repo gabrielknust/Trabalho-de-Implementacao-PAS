@@ -4,25 +4,25 @@
  */
 package trabalho.Model;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
  * @author gabri
  */
 public class Comprador extends Cliente{
-    private ArrayList<Imovel> imoveis;
+    private HashMap<Integer,Imovel> imoveis;
 
-    public Comprador(ArrayList<Imovel> imoveis, String CPF, String email, String nome, String endereço, int telefone) {
+    public Comprador(HashMap<Integer,Imovel> imoveis, String CPF, String email, String nome, String endereço, int telefone) {
         super(CPF, email, nome, endereço, telefone);
         this.imoveis = imoveis;
     }
 
-    public ArrayList<Imovel> getImoveis() {
+    public HashMap<Integer,Imovel> getImoveis() {
         return imoveis;
     }
 
-    public void setImoveis(ArrayList<Imovel> imoveis) {
+    public void setImoveis(HashMap<Integer,Imovel> imoveis) {
         this.imoveis = imoveis;
     }
     

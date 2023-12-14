@@ -4,8 +4,6 @@
  */
 package trabalho.Model;
 
-import trabalho.Control.VendedorControl;
-
 /**
  *
  * @author gabri
@@ -13,14 +11,14 @@ import trabalho.Control.VendedorControl;
 public class Imovel {
     private int codigo;
     private String modo;
-    private String dono;
+    private Cliente dono;
     private String endereco;
     private String tipo;
     private int quartos;
     private float valor;
     private boolean vendido = false;
 
-    public Imovel(int codigo, String modo, String dono, String endereco, String tipo, int quartos, float valor) {
+    public Imovel(int codigo, String modo, Cliente dono, String endereco, String tipo, int quartos, float valor) {
         this.codigo = codigo;
         this.modo = modo;
         this.dono = dono;
@@ -47,10 +45,10 @@ public class Imovel {
     }
 
     public Cliente getDono() {
-        return VendedorControl.read(this.dono);
+        return dono;
     }
 
-    public void setDono(String dono) {
+    public void setDono(Cliente dono) {
         this.dono = dono;
     }
 

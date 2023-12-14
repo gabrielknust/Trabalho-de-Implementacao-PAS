@@ -41,6 +41,7 @@ public class ImovelControl {
         }
         System.out.println("Informe o CPF do dono:");
         String CPF = sc.nextLine();
+        Cliente dono = VendedorControl.read(CPF);
         System.out.println("Informe o  endereço:");
         String endereco = sc.nextLine();
         System.out.println("Selecione o novo tipo do imóvel:");
@@ -65,7 +66,7 @@ public class ImovelControl {
         int numQuartos = sc.nextInt();
         System.out.println("Informe o valor do imovel:");
         float valor = sc.nextFloat();
-        imovel = new Imovel(codigo,modo,CPF,endereco,tipo,numQuartos,valor);
+        imovel = new Imovel(codigo,modo,dono,endereco,tipo,numQuartos,valor);
         imoveis.put(codigo,imovel);
         codigo++;
         return imovel;
@@ -109,7 +110,8 @@ public class ImovelControl {
             case 2:
                 System.out.println("Informe o CPF do novo dono:");
                 CPF = sc.nextLine();
-                imovel.setDono(CPF);
+                Cliente dono = VendedorControl.read(CPF);
+                imovel.setDono(dono);
                 break;
             case 3:
                 System.out.println("Informe o novo endereço:");

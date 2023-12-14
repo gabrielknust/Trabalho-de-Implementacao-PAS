@@ -10,6 +10,7 @@ import trabalho.Model.Cliente;
 import trabalho.Model.Imovel;
 import trabalho.Model.Modo;
 import trabalho.Model.Tipo;
+import trabalho.Model.Vendedor;
 
 /**
  *
@@ -42,7 +43,7 @@ public class ImovelControl {
         }
         System.out.println("Informe o CPF do dono:");
         String CPF = sc.nextLine();
-        Cliente dono = VendedorControl.read(CPF);
+        Vendedor dono = VendedorControl.read(CPF);
         System.out.println("Informe o  endereço:");
         String endereco = sc.nextLine();
         System.out.println("Selecione o novo tipo do imóvel:");
@@ -111,7 +112,7 @@ public class ImovelControl {
             case 2:
                 System.out.println("Informe o CPF do novo dono:");
                 CPF = sc.nextLine();
-                Cliente dono = VendedorControl.read(CPF);
+                Vendedor dono = VendedorControl.read(CPF);
                 imovel.setDono(dono);
                 break;
             case 3:

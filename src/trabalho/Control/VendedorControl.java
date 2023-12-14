@@ -19,14 +19,19 @@ public class VendedorControl {
     static Scanner sc = new Scanner(System.in);
     public static Vendedor create(){
         System.out.print("Informe o CPF: ");
+        sc.nextLine();
         String cpf = sc.nextLine();
         System.out.print("Informe o Nome: ");
+        sc.nextLine();
         String nome = sc.nextLine();
         System.out.print("Informe o Email: ");
+        sc.nextLine();
         String email = sc.nextLine();
         System.out.print("Informe o Telefone: ");
+        sc.nextLine();
         String telefone = sc.nextLine();
         System.out.print("Informe o Endereco: ");
+        sc.nextLine();
         String endereco = sc.nextLine();
         Vendedor vendedor = new Vendedor(cpf, email, nome, endereco, telefone);
         int controlador = 0;
@@ -67,6 +72,7 @@ public class VendedorControl {
         switch(indice){
         case 1:
             System.out.print("Informe o CPF: ");
+            sc.nextLine();
             String cpf = sc.nextLine();
             vendedor.setCPF(cpf);
             vendedores.remove(CPF);
@@ -74,21 +80,25 @@ public class VendedorControl {
             break;
         case 2:
             System.out.print("Informe o Nome: ");
+            sc.nextLine();
             String nome = sc.nextLine();
             vendedor.setNome(nome);
             break;
         case 3: 
             System.out.print("Informe o Email: ");
+            sc.nextLine();
             String email = sc.nextLine();
             vendedor.setEmail(email);
             break;
         case 4:
             System.out.print("Informe o Telefone: ");
+            sc.nextLine();
             String telefone = sc.nextLine();
             vendedor.setTelefone(telefone);
             break;
         case 5:
             System.out.print("Informe o Endereco: ");
+            sc.nextLine();
             String endereco = sc.nextLine();
             vendedor.setEndereço(endereco);
         case 6:

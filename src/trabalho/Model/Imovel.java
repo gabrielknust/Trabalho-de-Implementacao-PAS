@@ -11,14 +11,14 @@ package trabalho.Model;
 public class Imovel {
     private int codigo;
     private String modo;
-    private Cliente dono;
+    private Vendedor dono;
     private String endereco;
     private String tipo;
     private int quartos;
     private float valor;
     private boolean vendido = false;
 
-    public Imovel(int codigo, String modo, Cliente dono, String endereco, String tipo, int quartos, float valor) {
+    public Imovel(int codigo, String modo, Vendedor dono, String endereco, String tipo, int quartos, float valor) {
         this.codigo = codigo;
         this.modo = modo;
         this.dono = dono;
@@ -44,11 +44,11 @@ public class Imovel {
         this.modo = modo;
     }
 
-    public Cliente getDono() {
+    public Vendedor getDono() {
         return dono;
     }
 
-    public void setDono(Cliente dono) {
+    public void setDono(Vendedor dono) {
         this.dono = dono;
     }
 

@@ -29,6 +29,7 @@ public class CorretorControl {
         System.out.println("Informe a comissao de aluguel do Corretor:");
         comissaoAluguel = sc.nextInt();
         System.out.println("Informe o nome do Corretor:");
+        sc.nextLine();
         Nome = sc.nextLine();
         System.out.println("Informe o endereco do Corretor:");
         Endereco = sc.nextLine();

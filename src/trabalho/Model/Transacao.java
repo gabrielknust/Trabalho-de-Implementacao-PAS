@@ -11,15 +11,25 @@ import java.util.HashMap;
  * @author gabri
  */
 public class Transacao {
+    private int codigo;
     private Imovel imovel;
     private float valor;
     private HashMap<Integer,Corretor> corretores;
 
-    public Transacao(Imovel imovel, float valor, HashMap<Integer,Corretor> corretores) {
+    public Transacao(int codigo, Imovel imovel, float valor, HashMap<Integer,Corretor> corretores) {
+        this.codigo = codigo;
         this.corretores = new HashMap();
         this.imovel = imovel;
         this.valor = valor;
         this.corretores = corretores;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public Imovel getImovel() {
@@ -45,6 +55,4 @@ public class Transacao {
     public void setCorretores(HashMap<Integer, Corretor> corretores) {
         this.corretores = corretores;
     }
-    
-    
 }

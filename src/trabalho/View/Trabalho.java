@@ -3,7 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package trabalho.View;
-import trabalho.Control;
+import trabalho.Control.CompradorControl;
+import trabalho.Control.CorretorControl;
+import trabalho.Control.ImovelControl;
+import trabalho.Control.RelatorioControl;
+import trabalho.Control.TransacaoControl;
+import trabalho.Control.VisitaControl;
 
 /**
  *
@@ -31,7 +36,6 @@ public class Trabalho {
             System.out.println("11 - relatorio mensal");
             System.out.println("12 - relatorio anual");            
             System.out.println("13 - Sair");
-
             int opcao = scanner.nextInt();
         
             switch (opcao) {

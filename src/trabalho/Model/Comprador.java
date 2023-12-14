@@ -3,27 +3,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package trabalho.Model;
-
-import java.util.HashMap;
-
+import java.util.ArrayList;
 /**
  *
  * @author gabri
  */
 public class Comprador extends Cliente{
-    private HashMap<Integer,Imovel> imoveis;
+    private ArrayList<String> caracteristicas;
 
-    public Comprador(HashMap<Integer,Imovel> imoveis, String CPF, String email, String nome, String endereço, int telefone) {
+    public Comprador(ArrayList<String> caracteristicas, String CPF, String email, String nome, String endereço, int telefone) {
         super(CPF, email, nome, endereço, telefone);
-        this.imoveis = imoveis;
+        this.caracteristicas = caracteristicas;
     }
 
-    public HashMap<Integer,Imovel> getImoveis() {
-        return imoveis;
+    public ArrayList<String> getCaracteristicas() {
+        return caracteristicas;
     }
 
-    public void setImoveis(HashMap<Integer,Imovel> imoveis) {
-        this.imoveis = imoveis;
+    public void setCaracteristicas(ArrayList<String> caracteristicas) {
+        this.caracteristicas = caracteristicas;
     }
     
+    public void addCaracteristicas(String caracteristica){
+        this.caracteristicas.add(caracteristica);
+    }
 }

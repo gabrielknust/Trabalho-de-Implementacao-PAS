@@ -15,8 +15,8 @@ import trabalho.Model.Comprador;
  */
 
 public class CompradorControl {  
-    static HashMap<String,Comprador> compradores;
-    static ArrayList<String> caracteristicas;
+    static HashMap<String,Comprador> compradores = new HashMap<String,Comprador>();
+    static ArrayList<String> caracteristicas = new ArrayList<String>();
     static Scanner sc = new Scanner(System.in);
     public static Comprador create(){
         System.out.print("Informe o CPF: ");

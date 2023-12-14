@@ -22,7 +22,7 @@ public class ImovelControl {
     static int indice=0;
     static Scanner sc = new Scanner(System.in);
     
-    public static Imovel create(String modo, Cliente dono, String endereco, String tipo, int quartos, float valor){
+    public static Imovel create(String modo, Cliente dono, String endereco, Tipo tipo, int quartos, float valor){
         imovel = new Imovel(codigo,modo,dono,endereco,tipo,quartos,valor);
         imoveis.put(codigo,imovel);
         codigo++;
@@ -60,14 +60,59 @@ public class ImovelControl {
                         System.out.println("Código invalido!");
                 }
                 imovel.setModo(modo);
+                break;
             case 2:
                 System.out.println("Informe o código do novo dono:");
                 int condigo = sc.nextInt();
                 Cliente dono = VendedorControl.read(condigo);
                 imovel.setDono(dono);
+                break;
+            case 3:
+                System.out.println("Informe o novo endereço:");
+                String enderecoNovo = sc.nextLine();
+                endereco = enderecoNovo;
+                imovel.setEndereco(endereco);
+                break;
+
+            case 4: 
+                System.out.println("Selecione o novo tipo do imóvel:");
+                System.out.println("1:Casa.");
+                System.out.println("2:Apartamento.");
+                System.out.println("3:Loja.");
+                indice=sc.nextInt();
+                switch(indice){
+                    case 1:
+                        tipo = Tipo.Casa.getDescricao();
+                        break;
+                    case 2:
+                        tipo = Tipo.Apartamento.getDescricao();
+                        break;
+                    case 3:
+                        tipo = Tipo.Loja.getDescricao();
+                        break;
+                    default:
+                        System.out.println("Código invalido!");
+                }
+                imovel.setTipo(tipo);
+                break;
+
+            case 5: 
+                System.out.println("Informe o numero de quartos:");
+                int numQuartos = sc.nextInt();
+                quartos = numQuartos;
+                imovel.setQuartos(quartos);
+                break;
+
+            case 6: 
+                System.out.println("Informe o valor do imovel:");
+                int numQuartos = sc.nextFloat();
+                valor = novoValor;
+                imovel.setValor(valor);
+                break;
             }
     }
     public void delete(int codigo){
         imoveis.remove(codigo);
     }
 }
+
